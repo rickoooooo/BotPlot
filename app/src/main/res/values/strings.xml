@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BotPlot 9000</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="waypoint_types">
+        <item>start</item>
+        <item>waypoint</item>
+        <item>target</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rick\.gradle\caches\transforms-1\files-1.1\parser-release.aar\cd7fb2f56dc01d2469ed71e18b9fccac\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a74b8f91324ab753791567bb5877868e149ca3a8">
+        <dex dex="D:\Documents\AndroidStudioProjects\BotPlot9000\app\build\intermediates\transforms\preDex\release\31.jar" />
+    </item>
+
+</items>

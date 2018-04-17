@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_row_background">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/view_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/padd_10">
+
+
+        <TextView
+            android:id="@+id/latitude"
+            android:text="Latitude"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/longitude" />
+
+        <TextView
+            android:id="@+id/longitude"
+            android:text="Longitude"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/latitude"
+            android:textColor="@color/longitude" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button_gps"
+            android:layout_toStartOf="@+id/button_gps"
+            android:background="@color/colorLight"
+            android:text="Description"
+            android:textColor="@color/longitude" />
+
+        <Spinner
+            android:id="@+id/waypoint_type"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button_gps"
+            android:layout_alignBottom="@+id/button_gps"
+            android:layout_toStartOf="@+id/button_gps"
+            android:entries="@array/waypoint_types" />
+
+        <Button
+            android:id="@+id/button_gps"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/longitude"
+            android:layout_alignParentEnd="true"
+            android:onClick="onGpsClick"
+            android:text="GPS" />
+
+        <Button
+            android:id="@+id/button_map"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/waypoint_type"
+            android:onClick="onMapClick"
+            android:text="Map" />
+
+    </RelativeLayout>
+
+</FrameLayout>
