@@ -3905,11 +3905,12 @@ public final class R {
     public static final int view_foreground=0x7f0900c9;
     public static final int view_offset_helper=0x7f0900ca;
     public static final int visible=0x7f0900cb;
-    public static final int waypoint_type=0x7f0900cc;
-    public static final int wide=0x7f0900cd;
-    public static final int withText=0x7f0900ce;
-    public static final int wrap=0x7f0900cf;
-    public static final int wrap_content=0x7f0900d0;
+    public static final int waypointAccuracy=0x7f0900cc;
+    public static final int waypoint_type=0x7f0900cd;
+    public static final int wide=0x7f0900ce;
+    public static final int withText=0x7f0900cf;
+    public static final int wrap=0x7f0900d0;
+    public static final int wrap_content=0x7f0900d1;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;

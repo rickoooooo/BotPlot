@@ -14,44 +14,53 @@
     <RelativeLayout
         android:id="@+id/view_foreground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="95dp"
         android:background="@color/colorAccent"
         android:padding="@dimen/padd_10">
 
 
         <TextView
             android:id="@+id/latitude"
-            android:text="Latitude"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:text="Latitude"
             android:textColor="@color/longitude" />
 
         <TextView
             android:id="@+id/longitude"
-            android:text="Longitude"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/latitude"
+            android:text="Longitude"
+            android:textColor="@color/longitude" />
+
+        <TextView
+            android:id="@+id/waypointAccuracy"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/longitude"
+            android:onClick="onAccuracyClick"
+            android:text="9999"
             android:textColor="@color/longitude" />
 
         <EditText
             android:id="@+id/description"
-            android:layout_width="125dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/button_gps"
-            android:layout_toStartOf="@+id/button_gps"
+            android:layout_alignBaseline="@+id/button_map"
+            android:layout_alignBottom="@+id/button_map"
+            android:layout_alignStart="@+id/waypoint_type"
             android:background="@color/colorLight"
             android:text="Description"
             android:textColor="@color/longitude" />
 
         <Spinner
             android:id="@+id/waypoint_type"
-            android:layout_width="150dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button_gps"
-            android:layout_alignBottom="@+id/button_gps"
+            android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/button_gps"
             android:entries="@array/waypoint_types" />
 
@@ -68,8 +77,9 @@
             android:id="@+id/button_map"
             android:layout_width="55dp"
             android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/waypoint_type"
+            android:layout_below="@+id/button_gps"
             android:onClick="onMapClick"
             android:text="Map" />
 

@@ -1052,11 +1052,12 @@ int id view_background 0x7f0900c8
 int id view_foreground 0x7f0900c9
 int id view_offset_helper 0x7f0900ca
 int id visible 0x7f0900cb
-int id waypoint_type 0x7f0900cc
-int id wide 0x7f0900cd
-int id withText 0x7f0900ce
-int id wrap 0x7f0900cf
-int id wrap_content 0x7f0900d0
+int id waypointAccuracy 0x7f0900cc
+int id waypoint_type 0x7f0900cd
+int id wide 0x7f0900ce
+int id withText 0x7f0900cf
+int id wrap 0x7f0900d0
+int id wrap_content 0x7f0900d1
 int integer abc_config_activityDefaultDur 0x7f0a0000
 int integer abc_config_activityShortDur 0x7f0a0001
 int integer app_bar_elevation_anim_duration 0x7f0a0002

@@ -30,7 +30,7 @@ public class WaypointAdapter extends RecyclerView.Adapter<WaypointAdapter.MyView
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView latitude, longitude;
+        public TextView latitude, longitude, accuracy;
         public Button gpsButton;
         public Spinner typeSpinner;
         public Button mapButton;
@@ -42,6 +42,7 @@ public class WaypointAdapter extends RecyclerView.Adapter<WaypointAdapter.MyView
             super(view);
             latitude = (TextView) view.findViewById(R.id.latitude);
             longitude = (TextView) view.findViewById(R.id.longitude);
+            accuracy = (TextView) view.findViewById(R.id.waypointAccuracy);
             gpsButton = (Button) view.findViewById(R.id.button_gps);
             mapButton = (Button) view.findViewById(R.id.button_map);
             typeSpinner = (Spinner) view.findViewById(R.id.waypoint_type);
@@ -73,6 +74,7 @@ public class WaypointAdapter extends RecyclerView.Adapter<WaypointAdapter.MyView
         Waypoint waypoint = waypointList.get(position);
         holder.latitude.setText(Double.toString(waypoint.getLatitude()));
         holder.longitude.setText(Double.toString(waypoint.getLongitude()));
+        holder.accuracy.setText(Float.toString(waypoint.getAccuracy()));
         holder.typeSpinner.setSelection(waypoint.getType(), false);
         holder.typeSpinner.setOnItemSelectedListener(WaypointAdapter.this);
         holder.myCustomTextChangedListener.updatePosition(holder.getAdapterPosition());

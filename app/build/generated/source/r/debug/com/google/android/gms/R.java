@@ -91,8 +91,8 @@ public final class R {
         public static final int terrain = 0x7f0900b1;
         public static final int text = 0x7f0900b2;
         public static final int text2 = 0x7f0900b3;
-        public static final int wide = 0x7f0900cd;
-        public static final int wrap_content = 0x7f0900d0;
+        public static final int wide = 0x7f0900ce;
+        public static final int wrap_content = 0x7f0900d1;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0a0007;

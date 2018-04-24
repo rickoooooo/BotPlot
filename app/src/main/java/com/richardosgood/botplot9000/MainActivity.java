@@ -363,6 +363,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemTouch
     }
 
     public void onGpsClick(View view) {
+        updateGPS(view, false);
+    }
+
+    public void onAccuracyClick(View view) {
         updateGPS(view, true);
     }
 
