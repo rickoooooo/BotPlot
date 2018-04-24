@@ -34,6 +34,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -362,6 +363,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemTouch
     }
 
     public void onGpsClick(View view) {
+        updateGPS(view, true);
+    }
+
+    public void updateGPS(View view, boolean checkAccuracy) {
+        float accuracy = 9999;
         // Check to see if app has GPS permission
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // Ask for permission
@@ -372,7 +378,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemTouch
         // Get current GPS accuracy
         if (mLocation != null) {
             TextView textView = findViewById(R.id.gpsAccuracy);
-            float accuracy = mLocation.getAccuracy();
+            accuracy = mLocation.getAccuracy();
             textView.setText(Float.toString(accuracy));
         } else {
             Toast.makeText(this, "No GPX fix yet!", Toast.LENGTH_SHORT).show();
@@ -385,11 +391,18 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemTouch
         if (mLocation == null) {
             mLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             Toast.makeText(this, "Location not Detected", Toast.LENGTH_SHORT).show();
-        } else {
-            waypoint.updateGps(mLocation);
-            mAdapter.notifyDataSetChanged();
+            return;
+        }
+        if (checkAccuracy) { // Only update if accuracy is better now than it was before
+            if (accuracy >= waypoint.getAccuracy()) {
+                Toast.makeText(this, "Update failed: GPS accuracy worse or equal than before", Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
+        // Update GPS data point
+        waypoint.updateGps(mLocation);
+        mAdapter.notifyDataSetChanged();
     }
 
     public void getGpsAccuracy(View view){

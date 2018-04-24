@@ -99,5 +99,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleMap.addPolyline(polylineOptions);
         // Move the camera
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker, 15));
+        mMap.setMapType(mMap.MAP_TYPE_HYBRID);
     }
 }

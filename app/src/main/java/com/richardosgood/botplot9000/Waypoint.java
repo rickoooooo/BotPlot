@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 public class Waypoint implements Parcelable{
     private double longitude, latitude;
     private int type;               // Start,Waypoint,Cone
+    private float accuracy;
     private String description;     // Comment about what this waypoint is for
 
     public Waypoint() {
@@ -20,6 +21,7 @@ public class Waypoint implements Parcelable{
     public Waypoint(Double latitude, Double longitude, int type) {
         this.longitude = longitude;
         this.latitude = latitude;
+        this.accuracy = 9999;
         this.type = type;
         this.description = "";
     }
@@ -28,6 +30,7 @@ public class Waypoint implements Parcelable{
         this.longitude = longitude;
         this.latitude = latitude;
         this.description = description;
+        this.accuracy = 9999;
         switch (type){
             case "start": this.type=0; break;
             case "waypoint": this.type=1; break;
@@ -65,12 +68,20 @@ public class Waypoint implements Parcelable{
         description = desc;
     }
 
+    public float getAccuracy(){ return accuracy; }
+
+    public void setAccuracy(float accur){
+        accuracy = accur;
+    }
+
     public void updateGps(Location mLocation){
         double lat = mLocation.getLatitude();
         double lon = mLocation.getLongitude();
+        float accur = mLocation.getAccuracy();
 
         setLatitude(lat);
         setLongitude(lon);
+        setAccuracy(accur);
     }
 
     public String typeToString() {
