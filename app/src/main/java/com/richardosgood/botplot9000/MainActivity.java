@@ -491,14 +491,14 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemTouch
         output += "<gpx xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" version=\"1.1\" creator=\"BotPlot9000\">\n";
         output += "<metadata>\n";
         output += "\t<name>" + fileName.getText() + "</name>\n";
-        output += "</metadata>";
+        output += "</metadata>\n";
 
         //Loop through routes
         if (waypointList != null) {
 
-            output += "\t<rte>";
-            output += "\t\t<name>" + fileName.getText() + "</name>";
-            output += "\t\t<desc />";
+            output += "\t<rte>\n";
+            output += "\t\t<name>" + fileName.getText() + "</name>\n";
+            output += "\t\t<desc />\n";
 
             for (int j = 0; j < waypointList.size(); j++) {
 
@@ -507,9 +507,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemTouch
                         "lon=\"" + waypointList.get(j).getLongitude() + "\" " +
                         "type=\"" + waypointList.get(j).typeToString() + "\" " +
                         "handle=\"" + waypointList.get(j).getDescription() + "\"" +
-                        " />";
+                        " />\n";
             }
-            output += "\t</rte>";
+            output += "\t</rte>\n";
             output += "</gpx>";
         } else {
             Toast.makeText(this, "Waypoint list is null!", Toast.LENGTH_SHORT).show();
